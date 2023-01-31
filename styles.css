@@ -1,3 +1,7 @@
+html {
+    overflow-y: scroll;
+  }
+
 body {
     margin: 0px;
     min-height: 100vh;
@@ -11,23 +15,52 @@ body {
 nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    background-color: black;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #414288;
     padding: 10px;
+    
 }
 
 .nav-button{
-    background-color: black;
+    font-size:calc(16px + 1.5vw);
+    background-color: #414288;
     color: white;
     transition-duration: 0.4s;
-    padding: 16px;
+    padding: 32px;
+    border: none;
 }
 
 .nav-button:hover {
-    background-color: lightgray; /* Green */
+    background-color: #FFBF00; /* Green */
+    color: black;
+}
+  
+.nav-button:active {
+    background-color: darkgray; /* Green */
     color: white;
-  }
+}
 
+.portfolio-button {
+    font-size:calc(16px + 1.5vw);
+    background-color: #414288;
+    color: white;
+    transition-duration: 0.4s;
+    padding: 32px;
+    margin-left: 32px;
+    margin-right: 32px;
+    border: none;
+}
+
+.portfolio-button:hover {
+    background-color: #FFBF00; /* Green */
+    color: black;
+}
+  
+.portfolio-button:active {
+    background-color: darkgray; /* Green */
+    color: white;
+}
 
 footer {
     display: flex;
@@ -38,6 +71,7 @@ footer {
     background-color: black;
     margin-top: auto;
     width: auto;
+    font-size:calc(10px + 1.5vw);
 }
 
 
@@ -45,22 +79,188 @@ footer {
     background-color: lightgray;
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-content: center;
+    align-items: center;
     
     padding: 16px;
-    border-radius: 5px;
     flex-grow: 1;
+    font-size:calc(12px + 1.5vw);
 }
 
-#root > p {
-    background-color: gainsboro;
-    border-radius: 10px;
+h1 {
+    text-align: center;
+}
+
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+
+    background-color: #799496;
     padding: 16px;
-    width: 50%;
+    border-radius: 15px;
+    margin-top: 32px;
+    opacity: 0.8;
+    width: 80vw;
+    text-align: center;
 }
 
-img {
-    width: 40%;
+article > h3 {
+    text-align: center;
+    width: 100%;
+}
+
+article > p {
+    margin: 16px;
+    display: inline;
+}
+
+article > img {
+    margin: 16px;
+    width: 100%;
+    opacity: 0.8;
+}
+
+@media only screen and (min-width: 1092px) {
+    article {
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        text-align: justify;
+    }
+    article > img {
+        width: 40%;
+    }
+    article > button {
+        width: 40%;
+    }
+
+}
+
+ul {
+    list-style-type: none;
+    width: 80%;
+}
+
+li {
+    width: 90%;
+}
+
+#article-previous-employers {
+    display: flex;
+    flex-direction: column;
+}
+
+.stack-icon {
+    height: 32px;
+    width: auto;
+    margin: 8px;
+    height: 1.5em;
+}
+
+.stack-article {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 80vw;
+    align-content: center;
+}
+
+
+/* SCROLLBAR SETTINGS */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+
+/* CSS FOR COLLAPSIBLE BUTTONS IN EXPERIENCE SECTION */
+
+input[type='checkbox'] { 
+    display: none; 
+} 
+
+.wrap-collabsible { 
+    margin: 1.2rem 0; 
+    width: 100%;
+} 
+
+.lbl-toggle { 
+    display: block; 
+    font-size:calc(10px + 1.5vw);
+    text-transform: uppercase;
+    text-align: center; 
+    padding: 1rem; 
+    color: #DDD; 
+    background: #414288; 
+    cursor: pointer; 
+    border-radius: 7px; 
+    transition: all 0.25s ease-out; 
+} 
+    
+.lbl-toggle:hover { 
+    background-color: #FFBF00; /* Green */
+    color: black;
+} 
+
+.lbl-toggle::before { 
+    content: ' '; 
+    display: inline-block; 
+    border-top: 5px solid transparent; 
+    border-bottom: 5px solid transparent; 
+    border-left: 5px solid currentColor; 
+    vertical-align: middle; 
+    margin-right: .7rem; 
+    transform: translateY(-2px); 
+    transition: transform .2s ease-out; 
+} 
+
+.toggle:checked+.lbl-toggle::before { 
+    transform: rotate(90deg) translateX(-3px); 
+} 
+
+.collapsible-content { 
+    max-height: 0px; 
+    overflow: hidden; 
+    transition: max-height .25s ease-in-out; 
+} 
+
+.toggle:checked + .lbl-toggle + .collapsible-content {
+     max-height: 350px; 
+} 
+
+.toggle:checked+.lbl-toggle { 
+    border-bottom-right-radius: 0; 
+    border-bottom-left-radius: 0; 
+} 
+
+.collapsible-content .content-inner { 
+    background: #799496; 
+    border-bottom-left-radius: 7px; 
+    border-bottom-right-radius: 7px; 
+    padding: .5rem 1rem; 
+} 
+
+.collapsible-content p { 
+    margin-bottom: 0; 
 }
 
 
