@@ -18,7 +18,8 @@
 <body>
 
     <header>
-        <nav>
+        <nav id="navbar">
+            
             <button id="home-button" class="nav-button">
                 Home
             </button>
@@ -31,21 +32,44 @@
             <button id="portfolio-button" class="nav-button">
                 Portfolio
             </button>
+
+            <div class="wrap-collabsible" id="mobileMenu">
+                <input id="collapsibleNav" class="toggle" type="checkbox">
+                <label for="collapsibleNav" class="lbl-toggle">
+                    MENU
+                </label>
+                <div class="collapsible-content" id="collapsible-content-mob">
+                    <button id="home-button-mob" class="nav-button-mob">
+                        Home
+                    </button>
+                    <button id="bio-button-mob" class="nav-button-mob">
+                        Bio
+                    </button>
+                    <button id="experience-button-mob" class="nav-button-mob">
+                        Experience
+                    </button>
+                    <button id="portfolio-button-mob" class="nav-button-mob">
+                        Portfolio
+                    </button>
+                </div>
+            </div>
+
         </nav>
     </header>
 
-    <main id="root"></main>
+    <main id="root" class="content"></main>
 
     <footer>
         <a>
-            Michal Szostak 2023
+            Michał Szostak 2023
         </a>
-        <a>
-            Contact Me
+        <a href="mailto:michal.szostak56@gmail.com">
+            Contact Me 
         </a>
     </footer>
 
     <script src="app.js"></script>
     <script src="https://kit.fontawesome.com/dd7a9a9a25.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
